@@ -32,7 +32,7 @@ docker build -t ml-script:latest https://github.com/Boyannik7/CovidWebApp-ML.git
 To start the container use:
 ```
 export VOLUME=<local path to store volume data>
-docker run -p 80:8080 -v $VOLUME:/data \
+docker run -p 80:8000 -v $VOLUME:/data \
     -e OUTPUT_DATA_FILE_NAME=../data/output_data \
     ml-script:latest
 ```
