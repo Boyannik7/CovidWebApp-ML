@@ -13,7 +13,7 @@ def analyze():
 @server.route("/status/<id>")
 def check_status(id):
     fields = ["Date", "Country", "Confirmed", "Deaths", "Recovered", "Active", "New cases", "New deaths", "New recovered"]
-    rows = [["01/01/2020", "Turkey", "0", "0", "1", "2", "3", "4", "5"]]
+    rows = [["2020-01-01", "Turkey", "0", "0", "1", "2", "3", "4", "5"]]
     with open(os.environ['OUTPUT_DATA_FILE_NAME'] + '_' + id + ".csv", "w+") as csvfile:
         csvwriter = csv.writer(csvfile)
         csvwriter.writerow(fields)  
