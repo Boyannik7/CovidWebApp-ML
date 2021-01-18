@@ -30,7 +30,7 @@ def calculateAfter(days = 500, file = 'data/full_grouped.csv'):
 
     f = open("result.csv", "w")
 
-    f.write("last_day, new_cases, new_deaths, new_deaths \n")
+    f.write("Date,Country/Region, Confirmed, Deaths, Recovered, Active, New cases, New deaths, New recovered, WHO Region \n")
 
     for i in range(0, days):
 
@@ -62,8 +62,8 @@ def calculateAfter(days = 500, file = 'data/full_grouped.csv'):
         last_day += 1
         predict_arr = [last_day, new_cases, new_deaths, new_deaths]
 
-    f.write("{},{},{}".format(predict_arr[1],predict_arr[2], predict_arr[3]))
+    f.write("{},{},{},{},{},{},{},{},{},{}".format(0,0, 0, 0, 0, 0,predict_arr[1],predict_arr[2], predict_arr[3], 0))
     f.close()
-    return [predict_arr[1],predict_arr[2], predict_arr[3]]
+    return [0, 0, 0, 0, 0, 0, predict_arr[1],predict_arr[2], predict_arr[3], 0]
 
 calculateAfter()
