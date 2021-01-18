@@ -64,6 +64,6 @@ def calculateAfter(days = 500, file = 'data/full_grouped.csv'):
 
     f.write("{},{},{}".format(predict_arr[1],predict_arr[2], predict_arr[3]))
     f.close()
-    return [predict_arr[1],predict_arr[2], predict_arr[3]]
+    return [0,0, 0, 0, 0, 0, predict_arr[1],predict_arr[2], predict_arr[3], 0]
 
 calculateAfter()
