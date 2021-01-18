@@ -12,9 +12,9 @@ def analyze():
 
 @server.route("/status/<id>")
 def check_status(id):
-    fields = ["Date", "Country", "Latitude", "Longitude", "Deaths", "Recovered", "Active"]
-    rows = [["01/01/2020", "Turkey", "0.0", "0.8", "1", "2", "3"]]
-    with open(os.environ['OUTPUT_DATA_FILE_NAME'] + '_' + id, "w+") as csvfile:
+    fields = ["Date", "Country", "Confirmed", "Deaths", "Recovered", "Active", "New cases", "New deaths", "New recovered"]
+    rows = [["01/01/2020", "Turkey", "0", "0", "1", "2", "3", "4", "5"]]
+    with open(os.environ['OUTPUT_DATA_FILE_NAME'] + '_' + id + ".csv", "w+") as csvfile:
         csvwriter = csv.writer(csvfile)
         csvwriter.writerow(fields)  
         csvwriter.writerows(rows) 
@@ -22,7 +22,7 @@ def check_status(id):
 
 @server.route("/shutdown", methods = ['POST'])
 def shutdown():
-    return 200
+    return "", 200
 
 if __name__ == "__main__":
     server.run(host='0.0.0.0', port=8000)
